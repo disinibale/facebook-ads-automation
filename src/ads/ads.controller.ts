@@ -1,4 +1,4 @@
-import { Controller, Post, Put, Get, Delete, Param, Query, Body } from '@nestjs/common';
+import { Controller, Post, Put, Get, Delete, Param, Query, Body, UseGuards } from '@nestjs/common';
 
 import { AdsService } from './ads.service';
 import { InputCampaignDto, ParamCampaignDto, AlterCampaignDto } from './dto'
