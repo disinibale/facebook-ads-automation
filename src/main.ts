@@ -6,13 +6,16 @@ import supertokens from 'supertokens-node'
 import { SupertokensExceptionFilter } from './auth/auth.filter';
 import { ConfigService } from '@nestjs/config';
 
+import * as fs from 'fs'
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
   const configService = app.get(ConfigService)
   const port = configService.get('APP_PORT')
 
   app.enableCors({
-    origin: ['http://localhost:3000'],
+    origin: ['https://localhost:3000'],
     allowedHeaders: ['content-type', ...supertokens.getAllCORSHeaders()],
     credentials: true,
   });

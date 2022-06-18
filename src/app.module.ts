@@ -12,14 +12,14 @@ import { AppController } from './app.controller';
     }),
 
     AuthModule.forRoot({
-      connectionURI: "https://96bcabd1ec8711ec97fb97966a1e3642-ap-southeast-1.aws.supertokens.io:3571",
-      apiKey: "fb5-TG9NOwzglGCbl4x9AdoHZJgqmy",
+      connectionURI: process.env.SUPERTOKENS_CONNECTION_URI,
+      apiKey: process.env.SUPERTOKENS_API_KEY,
       appInfo: {
         appName: process.env.APP_NAME,
-        apiDomain: "http://localhost:5000",
-        websiteDomain: "http://localhost:3000",
-        apiBasePath: "/auth",
-        websiteBasePath: "/auth"
+        apiDomain: process.env.API_DOMAIN,
+        websiteDomain: process.env.WEBSITE_DOMAIN,
+        apiBasePath: process.env.API_BASE_PATH,
+        websiteBasePath: process.env.WEBSITE_BASE_PATH
       },
     }),
     PrismaModule,
